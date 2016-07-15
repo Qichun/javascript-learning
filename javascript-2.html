@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<button onclick="onTestButtonClick()" >click</button>
+<script>
+    function onTestButtonClick()
+    {
+        test_2();
+    }
+    function findMax()
+    {
+        var index = 0;
+        var max = arguments.length > 0 ? arguments[0] : 0;
+        for (; index < arguments.length; index++) {
+            if (max < arguments[index]) {
+                max = arguments[index];
+            }
+        }
+        return max;
+    }
+    function test_1()
+    {
+        console.log(findMax(1,2,3,4,5,5,5,5,5,55,5,5,5));
+    }
+    function test_2()
+    {
+        var student = {
+            'name': 'wangqichun',
+            'age' : 28,
+            'getAge': function(){
+                return this.age;
+            }
+        };
+        console.log(student.getAge());
+        student.age = 25;
+        console.log(student.getAge());
+        (function(obj){obj.age=10;})(student);
+        console.log(student.age);
+    }
+</script>
+</body>
+</html>

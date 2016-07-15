@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+<div>
+    <input id='input_id'>
+    <button id='test_button' onclick="button_click()">click</button>
+</div>
+<div>
+    <form name="add_user" action="http://www.baidu.com" onsubmit="return onSubmit()" method="get">
+        Name: <input type='text' name='wd'>
+        <input type='submit' value='submit'>
+    </form>
+</div>
+<a id="show_text"></a>
+<a href="javascript:void(0)">click me</a>
+<a href="#move_pos">click me move</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<p id="move_pos">move postion</p>
+<script>
+    function show_time()
+    {
+         document.getElementById('show_time').innerHTML = Date();
+         alert('hello alert');
+         console.log('show_time function is called');
+         document.getElementById('show_time').innerText = 'hello1';
+    }
+    function button_click()
+    {
+        document.getElementById('show_text').innerHTML = test_10();
+    }
+
+    function test_1()
+    {
+        return typeof ((5).toString());
+    }
+
+    function test_2()
+    {
+        var date = new Date();
+        console.log('year:'+date.getYear());
+        console.log('day:'+ date.getDay());
+        console.log('month:' + date.getMonth());
+        console.log('week:' + date.getHours())
+        return (typeof Date());
+    }
+
+    function test_3()
+    {
+        return '1'.indexOf('2');
+    }
+
+    function test_4()
+    {
+        var reg_pattern = /microsoft/i;
+        console.log('microsoft '.search(reg_pattern));
+        console.log('MicrosOFT'.search(reg_pattern));
+        console.log('Microsoft'.replace(reg_pattern, 'bat'));
+        console.log('microsoft'.search('microsoft'));
+        console.log('microsoft'.replace('micro', 'bat'));
+        return (typeof reg_pattern);
+    }
+    function test_5()
+    {
+        var reg_exp = /e/gi;
+        console.log(reg_exp.test('3Emc'));
+        console.log(reg_exp.exec('EmcE'));
+        return 1;
+    }
+    function test_6()
+    {
+        try {
+            addlert('2');
+        } catch (err) {
+            console.log(typeof err);
+            alert(err.message);
+        }
+    }
+    function test_7()
+    {
+        var value = document.getElementById('input_id').value;
+        try {
+            if (isNaN(value)) {
+                throw "not a number";
+            }
+            if (value < 0 ) {
+                throw 'too small';
+            }
+            if (value > 100) {
+                throw  'too big';
+            }
+            alert(value);
+        } catch (err) {
+            alert(typeof err);
+            console.log(err.message);
+        }
+        return '1';
+    }
+    function test_8()
+    {
+        'use strict';
+        var m = 8;
+        x = 7;
+    }
+    function test_9()
+    {
+        var student = {name:'wangqichun', age:15, 'sex':'male'};
+        console.log(student.age);
+        console.log(student.sex);
+    }
+    function onSubmit()
+    {
+        var user_name = document.forms['add_user']['wd'].value;
+        if (user_name.length < 6) {
+            alert("user's name is too shor");
+        } else if (user_name.length > 10) {
+            alert("user's name is too long");
+        } else {
+            return true;
+        }
+        return false;
+    }
+    function test_10()
+    {
+        var text = '{"employees":[' +
+                '{"firstName":"John","lastName":"Doe" },' +
+                '{"firstName":"Anna","lastName":"Smith" },' +
+                '{"firstName":"Peter","lastName":"Jones" }]}';
+        var employees = JSON.parse(text).employees;
+        console.log(JSON.stringify(employees));
+        for (var iterator in employees) {
+            var employee = employees[iterator];
+            console.log(employee.firstName);
+        }
+
+    }
+</script>
+</body>
+</html>
