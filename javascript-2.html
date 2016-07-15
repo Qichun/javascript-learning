@@ -6,10 +6,12 @@
 </head>
 <body>
 <button onclick="onTestButtonClick()" >click</button>
+<a id="test_color" onclick="test_7()">hello 1 </a>
+<a>hello 2</a>
 <script>
     function onTestButtonClick()
     {
-        test_2();
+        test_6();
     }
     function findMax()
     {
@@ -41,6 +43,57 @@
         (function(obj){obj.age=10;})(student);
         console.log(student.age);
     }
+    function test_3()
+    {
+        var add = function ()
+        {
+            var counter = 0;
+            function plus()
+            {
+                counter ++;
+            }
+            plus();
+            console.log(counter);
+        }
+        add();
+        add();
+    }
+
+    function test_4()
+    {
+        var add = (function()
+        {
+            var counter = 0;
+            return function()
+            {
+                return counter++;
+            }
+
+        })();
+        console.log(add());
+        console.log(add());
+        console.log(add());
+    }
+    function test_5()
+    {
+        var tags = document.getElementsByTagName('a');
+        console.log(typeof tags);
+        console.log(tags.length);
+        for (var index = 0; index < tags.length; index++) {
+            console.log(index);
+            console.log(tags[index].innerHTML);
+        }
+    }
+    function test_6()
+    {
+        document.getElementById("test_color").style.color = "red";
+    }
+    function test_7()
+    {
+        document.getElementById("test_color").innerHTML = "click";
+    }
+
+
 </script>
 </body>
 </html>
