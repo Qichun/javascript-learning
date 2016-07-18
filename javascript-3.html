@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+</head>
+<body onload="test_2()">
+<a id="change_name_test" style="background: darkred" href="http://www.baidu.com">click me</a>
+<div id="div_id">
+    <input id="input_test_id" type="text" onchange="test_4()">
+    <p id="delete_id">delete</p>
+</div>
+<button id="button_click_id">click me</button>
+<script type="application/javascript">
+   // document.getElementById("change_name_test").onclick =  test_1;
+    document.getElementById("button_click_id").addEventListener("click", test_7);
+    function test_1()
+    {
+        document.getElementById("change_name_test").innerHTML='hi';
+    }
+    function test_2()
+    {
+        //alert(navigator.cookieEnabled);
+    }
+    function test_3()
+    {
+        console.log('is called');
+        alert("exit");
+    }
+    function test_4()
+    {
+        var input = document.getElementById("input_test_id");
+        input.value = input.value.toUpperCase();
+    }
+    function test_5()
+    {
+        console.log("hello");
+    }
+    function test_6() {
+        var para = document.createElement("p");
+        var text = document.createTextNode("hello world");
+        para.appendChild(text);
+
+        var delete_p = document.getElementById("delete_id");
+
+        document.getElementById('div_id').appendChild(para);
+        document.getElementById('div_id').removeChild(delete_p);
+    }
+
+    function person(name, age, sex)
+    {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.changeName = changeName;
+        function changeName(name)
+        {
+            this.name = name;
+        }
+    }
+    function test_7()
+    {
+        var me = new person('wangqichun', 20, 'male');
+        console.log(me.name);
+        console.log(typeof me.changeName);
+        me.changeName("helo");
+        console.log(me.name);
+    }
+    function test_8()
+    {
+        document.screen.availHeight;
+        document.screen.availWidth;
+    }
+
+
+
+
+</script>
+</body>
+</html>
