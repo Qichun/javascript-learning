@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<a id="time_id"></a>
+<div>
+    <a id="time_out_id"></a>
+</div>
+<script type="application/javascript">
+    var change_time = new test_1
+    setInterval(test_1, 1000);
+    setTimeout(test_2, 1000);
+    checkCookie("user_name");
+    function test_1()
+    {
+        console.log("helo");
+        document.getElementById("time_id").innerHTML = Date();
+    }
+    function test_2()
+    {
+        document.getElementById("time_out_id").innerHTML = Date();
+    }
+    function getCookie(key_name)
+    {
+        var c_name = key_name + "=";
+        var cookies = document.cookie.split(";");
+        for (var index = 0; index < cookies.length; index++) {
+            var element = cookies[index].trim();
+            if (element.indexOf(c_name) === 0) {
+                return element.substr(c_name.length);
+            }
+        }
+        return "";
+    }
+    function checkCookie(key_name)
+    {
+        var name = getCookie(key_name);
+        if ( name !== "") {
+            alert("welcome " + name);
+        } else {
+            name = prompt("please input your name");
+            setCookie("user_name", name);
+        }
+    }
+    function setCookie(key_name, value)
+    {
+        document.cookie =  (key_name + "=" + value + ";");
+    }
+
+</script>
+</body>
+</html>

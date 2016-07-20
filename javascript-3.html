@@ -11,9 +11,16 @@
     <p id="delete_id">delete</p>
 </div>
 <button id="button_click_id">click me</button>
+<a href="http://www.baidu.com">click </a>
+<div>
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介孵化器简介
+        换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证换行验证
+    </p>
+</div>
 <script type="application/javascript">
    // document.getElementById("change_name_test").onclick =  test_1;
-    document.getElementById("button_click_id").addEventListener("click", test_7);
+    document.getElementById("button_click_id").addEventListener("click", test_11);
     function test_1()
     {
         document.getElementById("change_name_test").innerHTML='hi';
@@ -68,11 +75,32 @@
     }
     function test_8()
     {
-        document.screen.availHeight;
-        document.screen.availWidth;
-
-        
+        console.log(screen.availHeight);
+        console.log(screen.availWidth);
     }
+    function test_9()
+    {
+        console.log(location.host);
+        console.log(location.hostname);
+        console.log(location.port);
+        console.log(location.pathname);
+        console.log(location.href);
+        location.assign("http://www.baidu.com");
+    }
+    function test_10()
+    {
+        history.back();
+    }
+    function test_11()
+    {
+        console.log("codeName:"+navigator.appCodeName);
+        console.log("appName:"+navigator.appName);
+        console.log("appVersion:"+navigator.appVersion);
+        console.log("userAgent:"+navigator.userAgent);
+        console.log("platform:"+navigator.platform);
+        console.log("systemLanguage:"+navigator.systemLanguage);
+    }
+console.log("helloback");
 
 
 
